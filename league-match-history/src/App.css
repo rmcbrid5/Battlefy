@@ -23,11 +23,11 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.searchName{
+  margin: 0 5px 0 10px;
+}
+.search{
+  background:white;
+  color: black;
+  border-radius:3px;
 }
