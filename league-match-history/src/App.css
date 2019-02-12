@@ -1,5 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Vollkorn+SC|Quattrocento:700');
+.body,html{
+  
+}
 .App {
   text-align: center;
+  height: 100%;
+    background-color: rgba(0,0,0,.018);
+    color: rgba(0,0,0,.75);
+    font-family: 'Quattrocento', serif;
 }
 
 .App-logo {
@@ -31,3 +39,11 @@
   color: black;
   border-radius:3px;
 }
+.img-circular {
+  background-size: cover;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  width:200px;
+  height:200px;
+} 

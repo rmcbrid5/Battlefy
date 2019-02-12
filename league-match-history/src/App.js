@@ -9,7 +9,9 @@ class App extends Component {
       value: '',
       summoners: [],
       items: [],
-      champions: []
+      champions: [],
+      id: '',
+      profile: ''
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -55,7 +57,7 @@ class App extends Component {
         }
       })
       //static data api call to fetch the champions
-        fetch("http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json")
+      fetch("http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json")
             .then(res => res.json())
             .then(
                 (result) => {
@@ -69,8 +71,23 @@ class App extends Component {
                         }
                     }
                 })
+      fetch("https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + this.state.value + "?api_key="+process.env.REACT_APP_API_KEY)
+      .then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            id: result.accountId,
+            profile: "http://ddragon.leagueoflegends.com/cdn/9.3.1/img/profileicon/"+result.profileIconId+".png"
+          });
+        }, (error) => {
+          this.setState({
+            error
+          });
+          console.log(error);
+        })
   }
   render() {
+    var profile = this.state.profile;
     return (
       <div className="App">
         <header className="App-header">
@@ -81,7 +98,8 @@ class App extends Component {
           Summoner Name:
           <input className="searchName" type="text" name="name" value={this.state.name} onChange={this.handleChange} />
           </label>
-          <input className="search" type="submit" value="Search" />
+          <input className="search" type="submit" value="Search" /><br></br><br></br>
+          <img className="img-circular" src={profile}/>
           </form>
         </header>
       </div>
