@@ -1311,6 +1311,49 @@ class App extends Component {
     render() {
         const matches = this.state.matches;
         var profile = this.state.profile;
+        const outcomes = matches.map((match) =>
+            <React.Fragment key={match.gameId.game}>
+                <div className="item">
+                    <div className="item1">
+                        <h4 className="outcome">{match.outcome}</h4>
+                    </div>
+                    <div className="championInfo">
+                        <img className="img-circular-small" src={match.championImage} />
+                        <div className="summonerSpells">
+                            <img className="spell1" src={match.spells[0].image} />
+                            <img className="spell2" src={match.spells[1].image} />
+                        </div>
+                        <p className="champName">{match.championName}</p>
+                    </div>
+                    <div className="stats">
+                        <p>Duration: {match.gameDuration}</p>
+                        <p>Creep Score: {match.creepScore}</p>
+                        <p>Creep Score Per Minute: {match.creepScorePerMinute}</p>
+                        <p>KDA: {match.KDA}</p>
+                        <p>Level: {match.level}</p>
+                    </div>
+                    <div className="itemList">
+                        <img className = "items" src={match.items[0].image} />
+                        <img className="items" src={match.items[1].image} />
+                        {match.items.length > 2 && 
+                            <img className="items" src={match.items[2].image} />
+                        }<br></br>
+                        {match.items.length > 3 &&
+                            <img className="items" src={match.items[3].image} />
+                        }
+                        {match.items.length > 4 &&
+                            <img className="items" src={match.items[4].image} />
+                        }
+                        {match.items.length > 5 &&
+                            <img className="items" src={match.items[5].image} />
+                        }
+                        {match.items.length > 6 &&
+                            <img className="items" src={match.items[6].image} />
+                        }
+                    </div>
+                </div>
+            </React.Fragment>
+        )
         return (
             <div className="App">
                 <header className="App-header">
@@ -1323,6 +1366,7 @@ class App extends Component {
                         </label>
                         <input className="search" type="submit" value="Search" /><br></br><br></br>
                         <img className="img-circular" src={profile}/>
+                        <ul>{outcomes}</ul>
                     </form>
                 </header>
             </div>

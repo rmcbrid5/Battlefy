@@ -47,3 +47,74 @@
   width:200px;
   height:200px;
 } 
+.item{
+  background-color:white;
+  color: black;
+}
+.img-circular {
+  background-size: cover;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  width:200px;
+  height:200px;
+}
+.img-circular-small {
+  background-size: cover;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  width: 100px;
+  height: 100px;
+}
+.searchName{
+  margin: 0 5px 0 10px;
+}
+.search{
+  background:white;
+  color: black;
+  border-radius:3px;
+}
+p{
+  font-size: 12px;
+}
+h4{
+  font-size: 20px;
+  padding-top: 20px;
+}
+.championInfo{
+  padding: 20px;
+  display: inline-block;
+}
+.item1{
+  display:inline-block;
+  vertical-align: middle;
+}
+.stats{
+  display:inline-block;
+}
+.item{
+  margin-top:20px;
+  border-radius:30px;
+}
+.itemList{
+  display:inline-block;
+  padding-left: 20px;
+}
+.outcome {
+  margin-bottom: 100px;
+  margin-top: -20px;
+  padding-right: 10px;
+  font-size: 25px;
+}
+.items {
+  margin-right: 10px;
+  border-radius: 5px;
+}
+.spell2 {
+  margin-left: 10px;
+  border-radius: 5px;
+}
+.spell1{
+  border-radius: 5px;
+}
